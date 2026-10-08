@@ -1,4 +1,5 @@
 import './style.css'
+import pavementProtectionFlyer from './assets/pavement-protection-flyer.png'
 
 document.querySelector('#app').innerHTML = `
   <button class="side-tab" id="menuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="sideNav">
@@ -10,8 +11,10 @@ document.querySelector('#app').innerHTML = `
     <nav>
       <a href="#home" class="nav-link">Home</a>
       <a href="#services" class="nav-link">Services</a>
+      <a href="#protection-plan" class="nav-link">Protection Plan</a>
       <a href="#contact" class="nav-link">Contact Us</a>
       <a href="tel:+13862748568" class="nav-link nav-call">Call 386-274-8568</a>
+      <a href="mailto:info@coast2coastpaving.com" class="nav-link nav-call">Email Us</a>
     </nav>
   </aside>
   <div class="menu-overlay" id="menuOverlay"></div>
@@ -24,7 +27,10 @@ document.querySelector('#app').innerHTML = `
         <h1>Coast to Coast Paving</h1>
         <p class="brand-slogan">Proudly Paving Florida from Coast to Coast</p>
       </div>
-      <a href="tel:+13862748568" class="header-phone">Call 386-274-8568</a>
+      <div class="header-contact-links">
+        <a href="tel:+13862748568" class="header-phone">Call 386-274-8568</a>
+        <a href="mailto:info@coast2coastpaving.com" class="header-phone">info@coast2coastpaving.com</a>
+      </div>
     </div>
   </header>
 
@@ -160,6 +166,18 @@ document.querySelector('#app').innerHTML = `
       </ul>
     </section>
 
+    <section class="protection-plan" id="protection-plan">
+      <div class="section-head">
+        <p class="eyebrow">Protection Plan</p>
+        <h3>Ask About Our Pavement Protection Plan</h3>
+      </div>
+      <img
+        src="${pavementProtectionFlyer}"
+        alt="Coast to Coast Pavement Protection Plan flyer"
+        class="protection-plan-image"
+      />
+    </section>
+
     <section class="quote" id="quote">
       <div class="quote-copy">
         <p class="eyebrow">Fast Estimate</p>
@@ -279,7 +297,7 @@ quoteForm.addEventListener('submit', async (event) => {
 
   try {
     const formData = new FormData(quoteForm)
-    const response = await fetch('https://formsubmit.co/ajax/brandon@floridasiteservices.com', {
+    const response = await fetch('https://formsubmit.co/ajax/brandon@coast2coastpaving.com', {
       method: 'POST',
       headers: {
         Accept: 'application/json',

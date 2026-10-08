@@ -79,8 +79,16 @@ body::before {
   padding-top: 0.1rem;
 }
 
-.header-phone {
+.header-contact-links {
   margin-left: auto;
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.header-phone {
   color: var(--mist);
   text-decoration: none;
   border: 1px solid #6a6a6a;
@@ -387,6 +395,15 @@ section {
   color: #d6d6d6;
 }
 
+.protection-plan-image {
+  width: min(100%, 980px);
+  display: block;
+  margin: 1rem auto 0;
+  border-radius: 16px;
+  border: 1px solid #353535;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34);
+}
+
 .quote {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -596,8 +613,15 @@ section {
 }
 
 .nav-call {
-  background: #f3f3f3;
-  color: #000000;
+  background: #1c1c1c;
+  color: #efefef;
+  border-color: #4a4a4a;
+}
+
+.nav-call:hover {
+  background: #2a2a2a;
+  color: #ffffff;
+  border-color: #5a5a5a;
 }
 
 .menu-overlay {
@@ -631,6 +655,7 @@ section {
 .services,
 .why-choose,
 .benefits,
+.protection-plan,
 .quote,
 .contact {
   animation: revealUp 0.6s ease both;
@@ -646,6 +671,10 @@ section {
 
 .benefits {
   animation-delay: 0.18s;
+}
+
+.protection-plan {
+  animation-delay: 0.22s;
 }
 
 .quote {
@@ -668,10 +697,14 @@ section {
   }
 
   .header-phone {
-    margin-left: 0;
     margin-top: 0.2rem;
     font-size: 1.05rem;
     padding: 0.6rem 0.9rem;
+  }
+
+  .header-contact-links {
+    margin-left: 0;
+    justify-content: flex-start;
   }
 
   .service-grid,
